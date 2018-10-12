@@ -20,7 +20,14 @@ namespace Lab04_TicTacToe
             Console.WriteLine("Let's play the game!!");
             Game Game = new Game(p1, p2);
             Player Winner = Game.Play();
-            Console.WriteLine($"Winner is: {Winner.Name}");
+            if (Winner == null)
+            {
+                Console.WriteLine("Tie game.");
+            }
+            else
+            {
+                Console.WriteLine($"Winner is: {Winner.Name}");
+            }
         }
 	}
 }

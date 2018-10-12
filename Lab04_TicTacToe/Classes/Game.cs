@@ -29,12 +29,14 @@ namespace Lab04_TicTacToe.Classes
 		/// <returns>Winner</returns>
 		public Player Play()
 		{
-            while (!CheckForWinner(Board))
+            int counter = 0;
+            while (!CheckForWinner(Board) && counter != 9)
             {
                 Board.DisplayBoard();
                 SwitchPlayer();
                 NextPlayer().TakeTurn(Board);
                 Console.Clear();
+                counter++;
             }
 
             if (PlayerOne.IsTurn && CheckForWinner(Board))
