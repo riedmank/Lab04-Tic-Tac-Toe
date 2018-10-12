@@ -11,7 +11,6 @@ namespace Lab04_TicTacToe.Classes
 		public Player Winner { get; set; }
 		public Board Board { get; set; }
 
-
 		/// <summary>
 		/// Require 2 players and a board to start a game. 
 		/// </summary>
@@ -30,7 +29,16 @@ namespace Lab04_TicTacToe.Classes
 		/// <returns>Winner</returns>
 		public Player Play()
 		{
+            while (!CheckForWinner(Board))
+            {
+                Board.DisplayBoard();
+                SwitchPlayer();
+                NextPlayer().TakeTurn(Board);
+                Console.Clear();
+            }
 
+            
+            return PlayerOne;
 			//TODO: Complete this method and utilize the rest of the class structure to play the game.
 
 			/*
@@ -76,9 +84,9 @@ namespace Lab04_TicTacToe.Classes
 				string b = Board.GameBoard[p2.Row, p2.Column];
 				string c = Board.GameBoard[p3.Row, p3.Column];
 
-				// TODO:  Determine a winner has been reached. 
-				// return true if a winner has been reached. 
-			
+                // TODO:  Determine a winner has been reached. 
+                // return true if a winner has been reached. 
+                
 			}
 
 			return false;
@@ -110,7 +118,5 @@ namespace Lab04_TicTacToe.Classes
 				PlayerTwo.IsTurn = false;
 			}
 		}
-
-
 	}
 }

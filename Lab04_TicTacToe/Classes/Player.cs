@@ -12,6 +12,17 @@ namespace Lab04_TicTacToe.Classes
 		/// </summary>
 		public string Marker { get; set; }
 
+        /// <summary>
+        /// Player constructor
+        /// </summary>
+        /// <param name="name">Name received from userInput</param>
+        /// <param name="marker">Marker automatically assigned on creation of player</param>
+        public Player (string name, string marker)
+        {
+            Name = name;
+            Marker = marker;
+        }
+
 		/// <summary>
 		/// Flag to determine if it is the user's turn
 		/// </summary>

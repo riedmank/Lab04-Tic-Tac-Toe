@@ -7,16 +7,20 @@ namespace Lab04_TicTacToe
 	{
 		public static void Main(string[] args)
 		{
-            Board Board = new Board();
-            Board.DisplayBoard();
+            PlayGame();
 		}
 
 		public static void PlayGame()
 		{
-			// TODO: Instantiate your players
-			// Create the Game
-			// Play the Game
-			// Output the winner
-		}
+            Console.WriteLine("Welcome to Tic Tac Toe.");
+            Console.WriteLine("Who is player one?");
+            Player p1 = new Player(Console.ReadLine(), "X");
+            Console.WriteLine("Who is player two?");
+            Player p2 = new Player(Console.ReadLine(), "O");
+            Console.WriteLine("Let's play the game!!");
+            Game Game = new Game(p1, p2);
+            Game.Play();
+            // Output the winner
+        }
 	}
 }
