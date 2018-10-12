@@ -19,8 +19,8 @@ namespace Lab04_TicTacToe
             Player p2 = new Player(Console.ReadLine(), "O");
             Console.WriteLine("Let's play the game!!");
             Game Game = new Game(p1, p2);
-            Game.Play();
-            // Output the winner
+            Player Winner = Game.Play();
+            Console.WriteLine($"Winner is: {Winner.Name}");
         }
 	}
 }
